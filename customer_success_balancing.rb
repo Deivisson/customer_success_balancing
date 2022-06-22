@@ -20,8 +20,8 @@ class CustomerSuccessBalancing
     overworked_id     = 0
     balancing         = {}
 
-    # All CS have a level smaller than the size of the Clients,
-    # consequently all clients are not supported
+    # All CS have a level smaller than the size of the Customers,
+    # consequently all customers are not supported
     return 0 if current_cs.nil?
 
     while (index_customer < @customers.size) do # O(n)
@@ -72,7 +72,7 @@ class CustomerSuccessBalancing
   
   # Return the CSs index that has possibility to attend customers
   def index_customer_success_to_start
-    first_customer = @customers[0];
+    first_customer = @customers[0]
     @customer_success.each_with_index do |cs, index|
       return index if cs[:score] >= first_customer[:score]
     end
